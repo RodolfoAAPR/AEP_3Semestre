@@ -373,3 +373,265 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+// AQUI VAI O JS DO CONTATO
+
+
+// Envio do formulário de contato
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm")
+  if (contactForm) {
+    contactForm.addEventListener("submit", handleContactSubmit)
+  }
+})
+
+function handleContactSubmit(e) {
+  e.preventDefault()
+
+  const formData = new FormData(e.target)
+  const data = {
+    nome: formData.get("nome"),
+    email: formData.get("email"),
+    telefone: formData.get("telefone"),
+    assunto: formData.get("assunto"),
+    mensagem: formData.get("mensagem"),
+  }
+
+  // Validação básica
+  if (!validateContactForm(data)) {
+    return
+  }
+
+  // Simular envio
+  const submitBtn = e.target.querySelector('button[type="submit"]')
+  addLoadingState(submitBtn, "Enviando...")
+
+  setTimeout(() => {
+    showSuccessMessage()
+    e.target.reset()
+  }, 2000)
+}
+
+function validateContactForm(data) {
+  let isValid = true
+
+  // Limpar mensagens de erro anteriores
+  document.querySelectorAll(".error-message").forEach((msg) => msg.remove())
+  document.querySelectorAll(".error").forEach((field) => field.classList.remove("error"))
+
+  // Validar nome
+  if (!data.nome || data.nome.trim().length < 2) {
+    showFieldError("nome", "Nome deve ter pelo menos 2 caracteres")
+    isValid = false
+  }
+
+  // Validar email
+  if (!data.email || !validateEmail(data.email)) {
+    showFieldError("email", "E-mail inválido")
+    isValid = false
+  }
+
+  // Validar assunto
+  if (!data.assunto) {
+    showFieldError("assunto", "Selecione um assunto")
+    isValid = false
+  }
+
+  // Validar mensagem
+  if (!data.mensagem || data.mensagem.trim().length < 10) {
+    showFieldError("mensagem", "Mensagem deve ter pelo menos 10 caracteres")
+    isValid = false
+  }
+
+  return isValid
+}
+
+function showFieldError(fieldName, message) {
+  const field = document.getElementById(fieldName)
+  if (field) {
+    field.classList.add("error")
+
+    const errorDiv = document.createElement("div")
+    errorDiv.className = "error-message"
+    errorDiv.textContent = message
+
+    field.parentNode.appendChild(errorDiv)
+  }
+}
+
+function showSuccessMessage() {
+  const form = document.getElementById("contactForm")
+  const successDiv = document.createElement("div")
+  successDiv.className = "success-message"
+  successDiv.innerHTML = `
+    <i class="fas fa-check-circle"></i>
+    <span>Mensagem enviada com sucesso! Entraremos em contato em breve.</span>
+  `
+
+  form.parentNode.insertBefore(successDiv, form)
+
+  // Remover mensagem após 5 segundos
+  setTimeout(() => {
+    successDiv.remove()
+  }, 5000)
+}
+
+// Funções dos canais de atendimento
+function ligarPrefeitura() {
+  if (confirm("Deseja ligar para a Prefeitura?\nNúmero: (44) 3901-1156")) {
+    window.location.href = "tel:4439011156"
+  }
+}
+
+function ligar156() {
+  if (confirm("Deseja ligar para a Central 156?")) {
+    window.location.href = "tel:156"
+  }
+}
+
+function abrirWhatsApp() {
+  const message = encodeURIComponent("Olá! Gostaria de obter informações sobre os serviços públicos de Maringá.")
+  window.open(`https://wa.me/5544999999999?text=${message}`, "_blank")
+}
+
+function abrirSiteOficial() {
+  window.open("https://www.maringa.pr.gov.br", "_blank")
+}
+
+function verLocalizacao() {
+  verNoMapa("Av. XV de Novembro, 200, Maringá, PR")
+}
+
+// Função para FAQ
+function toggleFAQ(button) {
+  const faqItem = button.parentNode
+  const answer = faqItem.querySelector(".faq-answer")
+  const isActive = button.classList.contains("active")
+
+  // Fechar todas as outras FAQs
+  document.querySelectorAll(".faq-question.active").forEach((activeBtn) => {
+    if (activeBtn !== button) {
+      activeBtn.classList.remove("active")
+      activeBtn.parentNode.querySelector(".faq-answer").classList.remove("active")
+    }
+  })
+
+  // Toggle da FAQ atual
+  if (isActive) {
+    button.classList.remove("active")
+    answer.classList.remove("active")
+  } else {
+    button.classList.add("active")
+    answer.classList.add("active")
+  }
+}
+
+// Máscara para telefone
+document.addEventListener("DOMContentLoaded", () => {
+  const telefoneInput = document.getElementById("telefone")
+  if (telefoneInput) {
+    telefoneInput.addEventListener("input", (e) => {
+      let value = e.target.value.replace(/\D/g, "")
+
+      if (value.length <= 11) {
+        if (value.length <= 10) {
+          value = value.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3")
+        } else {
+          value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")
+        }
+        e.target.value = value
+      }
+    })
+  }
+})
+
+// Validação em tempo real
+document.addEventListener("DOMContentLoaded", () => {
+  const formInputs = document.querySelectorAll("#contactForm input, #contactForm select, #contactForm textarea")
+
+  formInputs.forEach((input) => {
+    input.addEventListener("blur", function () {
+      validateField(this)
+    })
+
+    input.addEventListener("input", function () {
+      // Remover classe de erro quando o usuário começar a digitar
+      if (this.classList.contains("error")) {
+        this.classList.remove("error")
+        const errorMsg = this.parentNode.querySelector(".error-message")
+        if (errorMsg) {
+          errorMsg.remove()
+        }
+      }
+    })
+  })
+})
+
+function validateField(field) {
+  const value = field.value.trim()
+  let isValid = true
+  let errorMessage = ""
+
+  // Remover mensagens de erro anteriores
+  const existingError = field.parentNode.querySelector(".error-message")
+  if (existingError) {
+    existingError.remove()
+  }
+  field.classList.remove("error", "success")
+
+  switch (field.name) {
+    case "nome":
+      if (value.length < 2) {
+        errorMessage = "Nome deve ter pelo menos 2 caracteres"
+        isValid = false
+      }
+      break
+
+    case "email":
+      if (!validateEmail(value)) {
+        errorMessage = "E-mail inválido"
+        isValid = false
+      }
+      break
+
+    case "assunto":
+      if (!value) {
+        errorMessage = "Selecione um assunto"
+        isValid = false
+      }
+      break
+
+    case "mensagem":
+      if (value.length < 10) {
+        errorMessage = "Mensagem deve ter pelo menos 10 caracteres"
+        isValid = false
+      }
+      break
+  }
+
+  if (!isValid) {
+    showFieldError(field.name, errorMessage)
+  } else if (value) {
+    field.classList.add("success")
+  }
+
+  return isValid
+}
+
+// Função para adicionar estado de loading ao botão
+function addLoadingState(button, text) {
+  button.disabled = true
+  button.textContent = text
+}
+
+// Função para validar email
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email)
+}
+
+// Função para abrir localização no mapa
+function verNoMapa(endereco) {
+  const encodedAddress = encodeURIComponent(endereco)
+  window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, "_blank")
+}
