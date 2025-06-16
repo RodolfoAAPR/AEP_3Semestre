@@ -867,3 +867,236 @@ body {
     padding: 1rem;
   }
 }
+
+/* Health Page Styles */
+.health-page {
+  background: linear-gradient(135deg, #fef2f2 0%, #fef7f7 100%);
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+.search-ubs {
+  margin-bottom: 2rem;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.ubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ubs-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.ubs-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: #ef4444;
+  transform: translateY(-3px);
+}
+
+.ubs-header {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ubs-icon {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.ubs-title h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.ubs-zone {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.ubs-content {
+  padding: 1.5rem;
+}
+
+.ubs-info {
+  margin-bottom: 1.5rem;
+}
+
+.ubs-info .info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ubs-info .info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.ubs-info .info-item i {
+  color: #ef4444;
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+  min-width: 20px;
+}
+
+.ubs-info .info-item strong {
+  color: #111827;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.ubs-info .info-item p {
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ubs-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.health-info {
+  margin-bottom: 2rem;
+}
+
+.info-item-large {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.info-item-large i {
+  font-size: 2.5rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.info-item-large h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.info-item-large p {
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.emergency-health {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 2px solid #fecaca;
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.emergency-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.emergency-info h3 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.emergency-info p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* UBS Card Filtering */
+.ubs-card.hidden {
+  display: none;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.no-results i {
+  font-size: 3rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments for health page */
+@media (max-width: 768px) {
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ubs-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ubs-header {
+    padding: 1rem;
+  }
+
+  .ubs-content {
+    padding: 1rem;
+  }
+
+  .ubs-info .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

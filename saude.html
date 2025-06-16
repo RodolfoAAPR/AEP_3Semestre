@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de Saúde - Portal Maringá</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Portal Maringá</h1>
+                        <p>Cidade Conectada</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="index.html">Início</a>
+                    <a href="transporte.html">Transporte</a>
+                    <a href="saude.html" class="active">Saúde</a>
+                    <a href="#educacao">Educação</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="index.html">Início</a>
+            <a href="transporte.html">Transporte</a>
+            <a href="saude.html" class="active">Saúde</a>
+            <a href="#educacao">Educação</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="health-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Unidades de Saúde</h1>
+                <p>Encontre as UBS (Unidades Básicas de Saúde) mais próximas de você em Maringá</p>
+            </div>
+
+            <!-- Busca de UBS -->
+            <div class="card search-ubs">
+                <div class="card-header">
+                    <h2>
+                        <i class="fas fa-search"></i>
+                        Encontre uma UBS
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="search-form">
+                        <div class="search-grid">
+                            <div class="form-group">
+                                <label>Buscar por bairro ou endereço</label>
+                                <input type="text" placeholder="Digite o bairro ou rua..." id="searchUBS" class="search-input">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" onclick="buscarUBS()">
+                                    <i class="fas fa-search"></i>
+                                    Buscar UBS
+                                </button>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline location-btn" onclick="usarLocalizacaoUBS()">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Usar Minha Localização
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de UBS -->
+            <div class="ubs-grid">
+                <!-- UBS Aclimação -->
+                <div class="ubs-card" data-bairro="zona norte aclimacao guedner cesumar">
+                    <div class="ubs-header">
+                        <div class="ubs-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="ubs-title">
+                            <h3>UBS Aclimação</h3>
+                            <span class="ubs-zone">Zona Norte</span>
+                        </div>
+                    </div>
+                    <div class="ubs-content">
+                        <div class="ubs-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong>
+                                    <p>Av. Guedner, 1630 – Bloco 5<br>(próximo à Cesumar)</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone:</strong>
+                                    <p>(44) 3901-2249</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <p>Segunda a Sexta: 7h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ubs-actions">
+                            <button class="btn btn-primary" onclick="ligarUBS('44390122249')">
+                                <i class="fas fa-phone"></i>
+                                Ligar
+                            </button>
+                            <button class="btn btn-outline" onclick="verNoMapa('Av. Guedner, 1630, Maringá')">
+                                <i class="fas fa-map"></i>
+                                Ver no Mapa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UBS Alvorada I -->
+                <div class="ubs-card" data-bairro="alvorada jardim alvorada ibira">
+                    <div class="ubs-header">
+                        <div class="ubs-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="ubs-title">
+                            <h3>UBS Alvorada I</h3>
+                            <span class="ubs-zone">Jardim Alvorada</span>
+                        </div>
+                    </div>
+                    <div class="ubs-content">
+                        <div class="ubs-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong>
+                                    <p>Rua Ibirá, 433<br>Jardim Alvorada I</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone:</strong>
+                                    <p>Consulte números locais</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <p>Segunda a Sexta: 7h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ubs-actions">
+                            <button class="btn btn-primary" onclick="consultarContato('UBS Alvorada I')">
+                                <i class="fas fa-info-circle"></i>
+                                Consultar Contato
+                            </button>
+                            <button class="btn btn-outline" onclick="verNoMapa('Rua Ibirá, 433, Maringá')">
+                                <i class="fas fa-map"></i>
+                                Ver no Mapa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UBS Mandacaru -->
+                <div class="ubs-card" data-bairro="mandacaru vila santa isabel">
+                    <div class="ubs-header">
+                        <div class="ubs-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="ubs-title">
+                            <h3>UBS Mandacaru</h3>
+                            <span class="ubs-zone">Vila Santa Isabel</span>
+                        </div>
+                    </div>
+                    <div class="ubs-content">
+                        <div class="ubs-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong>
+                                    <p>Av. Mandacaru, 465<br>Vila Santa Isabel</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone:</strong>
+                                    <p>(44) 3109-1922</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <p>Segunda a Sexta: 7h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ubs-actions">
+                            <button class="btn btn-primary" onclick="ligarUBS('44310919229')">
+                                <i class="fas fa-phone"></i>
+                                Ligar
+                            </button>
+                            <button class="btn btn-outline" onclick="verNoMapa('Av. Mandacaru, 465, Maringá')">
+                                <i class="fas fa-map"></i>
+                                Ver no Mapa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UBS Ney Braga -->
+                <div class="ubs-card" data-bairro="ney braga ema">
+                    <div class="ubs-header">
+                        <div class="ubs-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="ubs-title">
+                            <h3>UBS Ney Braga</h3>
+                            <span class="ubs-zone">Bairro Ney Braga</span>
+                        </div>
+                    </div>
+                    <div class="ubs-content">
+                        <div class="ubs-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong>
+                                    <p>Rua Ema<br>Bairro Ney Braga</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone:</strong>
+                                    <p>Consulte site da saúde local</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <p>Segunda a Sexta: 7h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ubs-actions">
+                            <button class="btn btn-primary" onclick="consultarContato('UBS Ney Braga')">
+                                <i class="fas fa-info-circle"></i>
+                                Consultar Contato
+                            </button>
+                            <button class="btn btn-outline" onclick="verNoMapa('Rua Ema, Ney Braga, Maringá')">
+                                <i class="fas fa-map"></i>
+                                Ver no Mapa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UBS Jardim Industrial -->
+                <div class="ubs-card" data-bairro="jardim industrial lobelia">
+                    <div class="ubs-header">
+                        <div class="ubs-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="ubs-title">
+                            <h3>UBS Jardim Industrial</h3>
+                            <span class="ubs-zone">Jardim Industrial</span>
+                        </div>
+                    </div>
+                    <div class="ubs-content">
+                        <div class="ubs-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong>
+                                    <p>Rua Lobelia, 268<br>Jardim Industrial</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone:</strong>
+                                    <p>(44) 3309-4445</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <p>Segunda a Sexta: 7h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ubs-actions">
+                            <button class="btn btn-primary" onclick="ligarUBS('44330944459')">
+                                <i class="fas fa-phone"></i>
+                                Ligar
+                            </button>
+                            <button class="btn btn-outline" onclick="verNoMapa('Rua Lobelia, 268, Maringá')">
+                                <i class="fas fa-map"></i>
+                                Ver no Mapa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UBS Vila Esperança -->
+                <div class="ubs-card" data-bairro="vila esperanca pioneiro domingos">
+                    <div class="ubs-header">
+                        <div class="ubs-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="ubs-title">
+                            <h3>UBS Vila Esperança</h3>
+                            <span class="ubs-zone">Vila Esperança</span>
+                        </div>
+                    </div>
+                    <div class="ubs-content">
+                        <div class="ubs-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong>
+                                    <p>Rua Pioneiro Domingos<br>Vila Esperança</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone:</strong>
+                                    <p>Consulte redes sociais da Prefeitura</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <p>Segunda a Sexta: 7h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ubs-actions">
+                            <button class="btn btn-primary" onclick="consultarContato('UBS Vila Esperança')">
+                                <i class="fas fa-info-circle"></i>
+                                Consultar Contato
+                            </button>
+                            <button class="btn btn-outline" onclick="verNoMapa('Rua Pioneiro Domingos, Vila Esperança, Maringá')">
+                                <i class="fas fa-map"></i>
+                                Ver no Mapa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações Importantes -->
+            <div class="card health-info">
+                <div class="card-header">
+                    <h2>
+                        <i class="fas fa-info-circle"></i>
+                        Informações Importantes
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="info-grid">
+                        <div class="info-item-large">
+                            <i class="fas fa-user-md"></i>
+                            <h3>Atendimento</h3>
+                            <p>As UBS oferecem consultas médicas, enfermagem, vacinação, curativos e acompanhamento de doenças crônicas.</p>
+                        </div>
+                        <div class="info-item-large">
+                            <i class="fas fa-id-card"></i>
+                            <h3>Documentos</h3>
+                            <p>Leve RG, CPF, Cartão SUS e comprovante de residência para o atendimento.</p>
+                        </div>
+                        <div class="info-item-large">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Agendamento</h3>
+                            <p>Consultas podem ser agendadas presencialmente ou por telefone, conforme disponibilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contatos de Emergência -->
+            <div class="card emergency-health">
+                <div class="card-header">
+                    <h2>
+                        <i class="fas fa-ambulance"></i>
+                        Emergências de Saúde
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="emergency-grid">
+                        <div class="emergency-item">
+                            <div class="emergency-info">
+                                <h3>SAMU</h3>
+                                <p>Serviço de Atendimento Móvel de Urgência</p>
+                            </div>
+                            <button class="btn btn-emergency red" onclick="ligarEmergencia('192')">192</button>
+                        </div>
+                        <div class="emergency-item">
+                            <div class="emergency-info">
+                                <h3>Hospital Municipal</h3>
+                                <p>Emergências e Pronto Socorro</p>
+                            </div>
+                            <button class="btn btn-emergency blue" onclick="consultarHospital()">Consultar</button>
+                        </div>
+                        <div class="emergency-item">
+                            <div class="emergency-info">
+                                <h3>Vigilância Sanitária</h3>
+                                <p>Denúncias e Orientações</p>
+                            </div>
+                            <button class="btn btn-emergency green" onclick="consultarVigilancia()">Contato</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo e Descrição -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Portal Maringá</h3>
+                            <p>Cidade Conectada</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Um portal digital comunitário desenvolvido para democratizar o acesso a informações urbanas 
+                        essenciais e promover a inclusão digital em Maringá.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="transporte.html">Transporte</a></li>
+                        <li><a href="saude.html">Saúde</a></li>
+                        <li><a href="#educacao">Educação</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@portalmaringa.gov.br</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(44) 3901-1156</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>
+                                Prefeitura Municipal de Maringá<br>
+                                Av. XV de Novembro, 200<br>
+                                Centro - Maringá/PR
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Portal Maringá. Desenvolvido com foco na inclusão digital e sustentabilidade urbana.</p>
+                <p class="footer-note">Projeto alinhado aos Objetivos de Desenvolvimento Sustentável da Agenda 2030</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
