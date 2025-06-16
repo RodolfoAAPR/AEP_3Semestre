@@ -372,11 +372,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300)
     })
   }
-<<<<<<< HEAD
 })
 
-// AQUI VAI O JS DO CONTATO
-
+// ===== FUNÇÕES DE CONTATO =====
 
 // Envio do formulário de contato
 document.addEventListener("DOMContentLoaded", () => {
@@ -405,9 +403,13 @@ function handleContactSubmit(e) {
 
   // Simular envio
   const submitBtn = e.target.querySelector('button[type="submit"]')
-  addLoadingState(submitBtn, "Enviando...")
+  const originalText = submitBtn.innerHTML
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'
+  submitBtn.disabled = true
 
   setTimeout(() => {
+    submitBtn.innerHTML = originalText
+    submitBtn.disabled = false
     showSuccessMessage()
     e.target.reset()
   }, 2000)
@@ -500,7 +502,7 @@ function abrirSiteOficial() {
 }
 
 function verLocalizacao() {
-  verNoMapa("Av. XV de Novembro, 200, Maringá, PR")
+  verNoMapa("Av. XV de Novembro, 701, Maringá, PR")
 }
 
 // Função para FAQ
@@ -618,24 +620,3 @@ function validateField(field) {
 
   return isValid
 }
-
-// Função para adicionar estado de loading ao botão
-function addLoadingState(button, text) {
-  button.disabled = true
-  button.textContent = text
-}
-
-// Função para validar email
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return regex.test(email)
-}
-
-// Função para abrir localização no mapa
-function verNoMapa(endereco) {
-  const encodedAddress = encodeURIComponent(endereco)
-  window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, "_blank")
-}
-=======
-})
->>>>>>> e79462798beb1809df8ac704333a2707ae8db498

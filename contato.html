@@ -87,6 +87,7 @@
                                     <option value="transporte">Transporte Público</option>
                                     <option value="saude">Unidades de Saúde</option>
                                     <option value="educacao">Educação</option>
+                                    <option value="meio-ambiente">Meio Ambiente</option>
                                     <option value="sugestao">Sugestão</option>
                                     <option value="reclamacao">Reclamação</option>
                                     <option value="elogio">Elogio</option>
@@ -115,162 +116,157 @@
             <div class="contact-grid">
                 <!-- Informações da Prefeitura -->
                 <div class="card">
-    <div class="card-header">
-        <h2>
-            <i class="fas fa-building"></i>
-            Prefeitura Municipal
-        </h2>
-    </div>
-    <div class="card-content">
-        <div style="margin-bottom: 1.5rem;">
-            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
-                <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
-                <div>
-                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
-                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">Av. XV de Novembro, 200<br>Centro - Maringá/PR<br>CEP: 87013-230</p>
+                    <div class="card-header">
+                        <h2>
+                            <i class="fas fa-building"></i>
+                            Prefeitura Municipal
+                        </h2>
+                    </div>
+                    <div class="card-content">
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">Av. XV de Novembro, 701<br>Centro - Maringá/PR</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Central 156:</strong>
+                                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">Atendimento geral da Prefeitura<br>24 horas por dia, 7 dias por semana</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                <i class="fas fa-globe" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Site Oficial:</strong>
+                                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">www.maringa.pr.gov.br</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                <i class="fab fa-whatsapp" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">WhatsApp:</strong>
+                                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">Via site da Prefeitura<br>Segunda a Sexta: 8h às 17h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="btn btn-primary" onclick="ligar156()">
+                                <i class="fas fa-phone"></i>
+                                Ligar 156
+                            </button>
+                            <button class="btn btn-outline" onclick="abrirSiteOficial()">
+                                <i class="fas fa-globe"></i>
+                                Site Oficial
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
-                <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
-                <div>
-                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Telefone Principal:</strong>
-                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">(44) 3901-1156</p>
-                </div>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
-                <i class="fas fa-envelope" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
-                <div>
-                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">E-mail:</strong>
-                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">contato@portalmaringa.gov.br</p>
-                </div>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
-                <i class="fas fa-clock" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
-                <div>
-                    <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Horário de Atendimento:</strong>
-                    <p style="color: #6b7280; margin: 0; line-height: 1.4;">Segunda a Sexta: 8h às 17h</p>
-                </div>
-            </div>
-        </div>
-        <div class="contact-actions">
-            <button class="btn btn-primary" onclick="ligarPrefeitura()">
-                <i class="fas fa-phone"></i>
-                Ligar Agora
-            </button>
-            <button class="btn btn-outline" onclick="verNoMapa('Av. XV de Novembro, 200, Maringá')">
-                <i class="fas fa-map"></i>
-                Ver no Mapa
-            </button>
-        </div>
-    </div>
-</div>
 
                 <!-- Contatos por Departamento -->
                 <div class="card">
                     <div class="card-header">
                         <h2>
                             <i class="fas fa-users"></i>
-                            Departamentos
+                            Departamentos da Prefeitura
                         </h2>
                     </div>
                     <div class="card-content">
                         <div class="departments">
-                            <div class="department-item">
+                            <!-- Mobilidade Urbana -->
+                            <div class="department-item-detailed">
                                 <div class="department-icon blue">
                                     <i class="fas fa-bus"></i>
                                 </div>
-                                <div class="department-info">
-                                    <h3>Mobilidade Urbana</h3>
+                                <div class="department-info-detailed">
+                                    <h3>Secretaria Municipal de Mobilidade Urbana – SEMOB</h3>
                                     <p>Transporte público e trânsito</p>
-                                    <span class="department-phone">(44) 3901-1200</span>
+                                    <div class="department-contacts">
+                                        <div class="contact-detail">
+                                            <i class="fas fa-phone"></i>
+                                            <span>(44) 3221-8500</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>semob_administrativa@maringa.pr.gov.br</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Av. Colombo, 3.114, Zona 07, CEP 87030-120</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="department-item">
+                            <!-- Saúde -->
+                            <div class="department-item-detailed">
                                 <div class="department-icon red">
                                     <i class="fas fa-hospital"></i>
                                 </div>
-                                <div class="department-info">
-                                    <h3>Secretaria de Saúde</h3>
+                                <div class="department-info-detailed">
+                                    <h3>Secretaria Municipal de Saúde</h3>
                                     <p>UBS e serviços de saúde</p>
-                                    <span class="department-phone">(44) 3901-1300</span>
+                                    <div class="department-contacts">
+                                        <div class="contact-detail">
+                                            <i class="fas fa-phone"></i>
+                                            <span>(44) 3218-3100</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>saude_expediente@maringa.pr.gov.br</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Av. Prudente de Morais, 885, Zona 07</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="department-item">
+                            <!-- Educação -->
+                            <div class="department-item-detailed">
                                 <div class="department-icon purple">
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
-                                <div class="department-info">
-                                    <h3>Secretaria de Educação</h3>
+                                <div class="department-info-detailed">
+                                    <h3>Secretaria Municipal de Educação – SEDUC</h3>
                                     <p>Escolas e creches públicas</p>
-                                    <span class="department-phone">(44) 3901-1400</span>
+                                    <div class="department-contacts">
+                                        <div class="contact-detail">
+                                            <i class="fas fa-phone"></i>
+                                            <span>(44) 3221-2591 / 3221-2593 / 3221-2588</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Av. Itororó, 583, Zona 02</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="department-item">
+                            <!-- Meio Ambiente -->
+                            <div class="department-item-detailed">
                                 <div class="department-icon green">
                                     <i class="fas fa-leaf"></i>
                                 </div>
-                                <div class="department-info">
-                                    <h3>Meio Ambiente</h3>
+                                <div class="department-info-detailed">
+                                    <h3>Secretaria Municipal de Meio Ambiente e Bem-Estar Animal – SEMA</h3>
                                     <p>Sustentabilidade e preservação</p>
-                                    <span class="department-phone">(44) 3901-1500</span>
+                                    <div class="department-contacts">
+                                        <div class="contact-detail">
+                                            <i class="fas fa-phone"></i>
+                                            <span>(44) 3293-8750</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Av. Cerro Azul, 544, Zona 02, CEP 87010-000</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Canais de Atendimento -->
-            <div class="card channels-card">
-                <div class="card-header">
-                    <h2>
-                        <i class="fas fa-headset"></i>
-                        Outros Canais de Atendimento
-                    </h2>
-                </div>
-                <div class="card-content">
-                    <div class="channels-grid">
-                        <div class="channel-item">
-                            <div class="channel-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <h3>Central 156</h3>
-                            <p>Atendimento geral da Prefeitura</p>
-                            <p class="channel-detail">24 horas por dia, 7 dias por semana</p>
-                            <button class="btn btn-primary" onclick="ligar156()">Ligar 156</button>
-                        </div>
-
-                        <div class="channel-item">
-                            <div class="channel-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <h3>WhatsApp</h3>
-                            <p>Atendimento via mensagem</p>
-                            <p class="channel-detail">Segunda a Sexta: 8h às 17h</p>
-                            <button class="btn btn-primary" onclick="abrirWhatsApp()">Enviar Mensagem</button>
-                        </div>
-
-                        <div class="channel-item">
-                            <div class="channel-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>Site Oficial</h3>
-                            <p>Portal da Prefeitura de Maringá</p>
-                            <p class="channel-detail">Serviços online disponíveis</p>
-                            <button class="btn btn-primary" onclick="abrirSiteOficial()">Acessar Site</button>
-                        </div>
-
-                        <div class="channel-item">
-                            <div class="channel-icon">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                            <h3>Atendimento Presencial</h3>
-                            <p>Protocolo e informações gerais</p>
-                            <p class="channel-detail">Av. XV de Novembro, 200 - Centro</p>
-                            <button class="btn btn-primary" onclick="verLocalizacao()">Ver Localização</button>
                         </div>
                     </div>
                 </div>
@@ -292,7 +288,7 @@
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Acesse a seção "Transporte" do portal ou use o planejador de viagem na página inicial. Você também pode ligar para (44) 3901-1200.</p>
+                                <p>Acesse a seção "Transporte" do portal ou entre em contato com a SEMOB pelo telefone (44) 3221-8500.</p>
                             </div>
                         </div>
 
@@ -302,7 +298,7 @@
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Na seção "Saúde", use a busca por bairro ou clique em "Usar Minha Localização" para encontrar as UBS mais próximas de você.</p>
+                                <p>Na seção "Saúde", use a busca por bairro ou entre em contato com a Secretaria de Saúde pelo telefone (44) 3218-3100.</p>
                             </div>
                         </div>
 
@@ -312,17 +308,17 @@
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Use o formulário de contato acima, ligue para 156, ou compareça pessoalmente na Prefeitura no horário de atendimento.</p>
+                                <p>Use o formulário de contato acima, ligue para 156, ou compareça pessoalmente na Prefeitura na Av. XV de Novembro, 701.</p>
                             </div>
                         </div>
 
                         <div class="faq-item">
                             <button class="faq-question" onclick="toggleFAQ(this)">
-                                <span>O portal funciona em dispositivos móveis?</span>
+                                <span>Qual o horário de atendimento presencial?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Sim! O Portal Maringá foi desenvolvido com design responsivo e funciona perfeitamente em smartphones e tablets.</p>
+                                <p>O atendimento presencial funciona de segunda a sexta, das 8h às 17h, na Av. XV de Novembro, 701 - Centro.</p>
                             </div>
                         </div>
 
@@ -332,7 +328,7 @@
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Use o formulário de contato selecionando "Outros" como assunto, ou envie um e-mail para contato@portalmaringa.gov.br.</p>
+                                <p>Use o formulário de contato selecionando "Outros" como assunto, ou ligue para a Central 156.</p>
                             </div>
                         </div>
                     </div>
@@ -383,18 +379,18 @@
                     <h4>Contato</h4>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contato@portalmaringa.gov.br</span>
+                            <i class="fas fa-phone"></i>
+                            <span>156 - Central de Atendimento</span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(44) 3901-1156</span>
+                            <i class="fas fa-globe"></i>
+                            <span>www.maringa.pr.gov.br</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>
                                 Prefeitura Municipal de Maringá<br>
-                                Av. XV de Novembro, 200<br>
+                                Av. XV de Novembro, 701<br>
                                 Centro - Maringá/PR
                             </span>
                         </div>

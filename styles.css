@@ -1102,11 +1102,59 @@ body {
 }
 
 
-/* Contact Page Styles */
+/* Contact Page Styles - VERSÃO CORRIGIDA */
 .contact-page {
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
   min-height: calc(100vh - 200px);
   padding: 2rem 0;
+}
+
+.contact-details .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem !important;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.contact-details .contact-item i {
+  color: #16a34a !important;
+  font-size: 1.1rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 16px !important;
+  width: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.contact-details .contact-item div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.contact-details .contact-item strong {
+  color: #111827;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.contact-details .contact-item p {
+  color: #6b7280;
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+/* OVERRIDE ESPECÍFICO PARA CONTATO */
+.card .contact-details .contact-item {
+  gap: 0.25rem !important;
+}
+
+.card .contact-details .contact-item i {
+  margin-right: 0.25rem !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .contact-form-card {
@@ -1171,44 +1219,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
-}
-
-.contact-details {
-  margin-bottom: 1.5rem;
-}
-
-.contact-details .contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #f3f4f6;
-}
-
-.contact-details .contact-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.contact-details .contact-item i {
-  color: #16a34a;
-  font-size: 1.1rem;
-  margin-top: 0.25rem;
-  min-width: 20px;
-}
-
-.contact-details .contact-item strong {
-  color: #111827;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.contact-details .contact-item p {
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.4;
 }
 
 .contact-actions {
@@ -1425,6 +1435,68 @@ body {
   gap: 0.5rem;
 }
 
+/* Estilos para departamentos detalhados */
+.department-item-detailed {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s;
+  margin-bottom: 1rem;
+}
+
+.department-item-detailed:hover {
+  background: #f0fdf4;
+  border-color: #16a34a;
+}
+
+.department-item-detailed:last-child {
+  margin-bottom: 0;
+}
+
+.department-info-detailed h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.department-info-detailed p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.department-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-detail i {
+  color: #16a34a;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+  min-width: 14px;
+  flex-shrink: 0;
+}
+
+.contact-detail span {
+  color: #374151;
+  line-height: 1.4;
+}
+
 /* Responsive adjustments for contact page */
 @media (max-width: 768px) {
   .form-grid {
@@ -1450,5 +1522,35 @@ body {
   .department-item {
     flex-direction: column;
     text-align: center;
+  }
+
+  .department-item-detailed {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .department-info-detailed {
+    width: 100%;
+  }
+
+  .contact-detail {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ... estilos existentes ... */
+
+  .department-item-detailed {
+    padding: 0.75rem;
+  }
+
+  .department-info-detailed h3 {
+    font-size: 1rem;
+  }
+
+  .contact-detail {
+    font-size: 0.85rem;
   }
 }
