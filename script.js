@@ -374,8 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-// AQUI VAI O JS DO CONTATO
-
+// ===== FUNÇÕES DE CONTATO =====
 
 // Envio do formulário de contato
 document.addEventListener("DOMContentLoaded", () => {
@@ -404,9 +403,13 @@ function handleContactSubmit(e) {
 
   // Simular envio
   const submitBtn = e.target.querySelector('button[type="submit"]')
-  addLoadingState(submitBtn, "Enviando...")
+  const originalText = submitBtn.innerHTML
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'
+  submitBtn.disabled = true
 
   setTimeout(() => {
+    submitBtn.innerHTML = originalText
+    submitBtn.disabled = false
     showSuccessMessage()
     e.target.reset()
   }, 2000)
@@ -499,7 +502,7 @@ function abrirSiteOficial() {
 }
 
 function verLocalizacao() {
-  verNoMapa("Av. XV de Novembro, 200, Maringá, PR")
+  verNoMapa("Av. XV de Novembro, 701, Maringá, PR")
 }
 
 // Função para FAQ
@@ -617,6 +620,8 @@ function validateField(field) {
 
   return isValid
 }
+<<<<<<< HEAD
+=======
 
 // Função para adicionar estado de loading ao botão
 function addLoadingState(button, text) {
@@ -635,3 +640,4 @@ function verNoMapa(endereco) {
   const encodedAddress = encodeURIComponent(endereco)
   window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, "_blank")
 }
+>>>>>>> f4367605d615f771cebcca179f991e99ec45c738
