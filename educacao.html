@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação - Portal Maringá</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Portal Maringá</h1>
+                        <p>Cidade Conectada</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="index.html">Início</a>
+                    <a href="transporte.html">Transporte</a>
+                    <a href="saude.html">Saúde</a>
+                    <a href="educacao.html" class="active">Educação</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="index.html">Início</a>
+            <a href="transporte.html">Transporte</a>
+            <a href="saude.html">Saúde</a>
+            <a href="educacao.html" class="active">Educação</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main class="education-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Educação em Maringá</h1>
+                <p>Encontre creches e escolas públicas próximas a você</p>
+            </div>
+
+            <!-- Busca -->
+            <div class="card search-card">
+                <div class="card-content">
+                    <div class="search-education">
+                        <div class="search-input-group">
+                            <input 
+                                type="text" 
+                                id="searchEducation" 
+                                class="search-input" 
+                                placeholder="Digite o nome da escola, creche ou bairro..."
+                            >
+                            <button class="btn btn-primary" onclick="buscarEducacao()">
+                                <i class="fas fa-search"></i>
+                                Buscar
+                            </button>
+                        </div>
+                        <button class="btn btn-outline location-btn" onclick="usarLocalizacaoEducacao()">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Usar Minha Localização
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creches Municipais -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        <i class="fas fa-baby"></i>
+                        Creches Municipais (CMEIs)
+                    </h2>
+                    <p>Centros Municipais de Educação Infantil</p>
+                </div>
+                <div class="card-content">
+                    <div class="education-grid">
+                        <!-- CMEI Irmã Firmina Maria -->
+                        <div class="education-card" data-bairro="jardim alvorada">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>CMEI Irmã Firmina Maria</h3>
+                                    <span class="education-type">Creche Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Pioneiro Bruno Bluthgen, 1.222<br>Jardim Alvorada III - CEP 87035-371</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Telefone:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">(44) 3221-2928</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="ligarEducacao('4432212928')">
+                                    <i class="fas fa-phone"></i>
+                                    Ligar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Pioneiro Bruno Bluthgen, 1222, Jardim Alvorada III, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CMEI Des. Zeferino M. Krukoski -->
+                        <div class="education-card" data-bairro="conjunto thais">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>CMEI Des. Zeferino M. Krukoski</h3>
+                                    <span class="education-type">Creche Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Olindo Alcini, 833<br>Conjunto Thais - CEP 87070-390</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Telefone:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">(44) 3221-2914</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="ligarEducacao('4432212914')">
+                                    <i class="fas fa-phone"></i>
+                                    Ligar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Olindo Alcini, 833, Conjunto Thais, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CMEI Maria C.R. Alexandre Pion -->
+                        <div class="education-card" data-bairro="conjunto parigot souza">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>CMEI Maria C.R. Alexandre Pion</h3>
+                                    <span class="education-type">Creche Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Av. Osiris Stengel Guimarães, 1.711<br>Conjunto Parigot Souza - CEP 87047-302</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Telefone:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">(44) 3221-2940</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="ligarEducacao('4432212940')">
+                                    <i class="fas fa-phone"></i>
+                                    Ligar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Av. Osiris Stengel Guimarães, 1711, Conjunto Parigot Souza, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CMEI José Gerardo Braga -->
+                        <div class="education-card" data-bairro="zona 06">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>CMEI José Gerardo Braga</h3>
+                                    <span class="education-type">Creche Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Caramuru, 553<br>Zona 06 - CEP 87015-570</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Telefone:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">(44) 3221-2932</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="ligarEducacao('4432212932')">
+                                    <i class="fas fa-phone"></i>
+                                    Ligar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Caramuru, 553, Zona 06, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CMEI Herbert José de Souza -->
+                        <div class="education-card" data-bairro="conjunto residencial guaiapó">
+                            <div class="education-header">
+                                <div class="education-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>CMEI Herbert José de Souza</h3>
+                                    <span class="education-type">Creche Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Praça Vereador Miguel de Oliveira, 451<br>Conjunto Residencial Guaiapó - CEP 87047-417</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Telefone:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">(44) 3221-2925</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="ligarEducacao('4432212925')">
+                                    <i class="fas fa-phone"></i>
+                                    Ligar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Praça Vereador Miguel de Oliveira, 451, Conjunto Residencial Guaiapó, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Escolas Municipais -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        <i class="fas fa-school"></i>
+                        Escolas Municipais
+                    </h2>
+                    <p>Ensino Fundamental Municipal</p>
+                </div>
+                <div class="card-content">
+                    <div class="education-grid">
+                        <!-- Dr. Helenton Borba Cortes -->
+                        <div class="education-card" data-bairro="parque aeroporto">
+                            <div class="education-header">
+                                <div class="education-icon school">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>Escola Municipal Dr. Helenton Borba Cortes</h3>
+                                    <span class="education-type">Escola Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Pioneira Maria Lopes, 665<br>Parque Aeroporto - CEP 87055-190</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Contato:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Consulte via Secretaria de Educação<br>(44) 3221-2591</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="consultarEscola('Dr. Helenton Borba Cortes')">
+                                    <i class="fas fa-info-circle"></i>
+                                    Consultar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Pioneira Maria Lopes, 665, Parque Aeroporto, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Dona Lázara R. Vilela -->
+                        <div class="education-card" data-bairro="conjunto joão de barro">
+                            <div class="education-header">
+                                <div class="education-icon school">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>Escola Municipal Dona Lázara R. Vilela</h3>
+                                    <span class="education-type">Escola Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Paiçandu, 641<br>Conjunto João de Barro II - CEP 87105-000</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Contato:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Consulte via Secretaria de Educação<br>(44) 3221-2591</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="consultarEscola('Dona Lázara R. Vilela')">
+                                    <i class="fas fa-info-circle"></i>
+                                    Consultar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Paiçandu, 641, Conjunto João de Barro II, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Célestin Freinet -->
+                        <div class="education-card" data-bairro="jardim kosmos">
+                            <div class="education-header">
+                                <div class="education-icon school">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>Escola Municipal Célestin Freinet</h3>
+                                    <span class="education-type">Escola Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Mandaguaçu, 100<br>Jardim Kosmos - CEP 87070-220</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Contato:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Consulte via Secretaria de Educação<br>(44) 3221-2591</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="consultarEscola('Célestin Freinet')">
+                                    <i class="fas fa-info-circle"></i>
+                                    Consultar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Mandaguaçu, 100, Jardim Kosmos, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Campos Salles -->
+                        <div class="education-card" data-bairro="jardim aeroporto">
+                            <div class="education-header">
+                                <div class="education-icon school">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>Escola Municipal Campos Salles</h3>
+                                    <span class="education-type">Escola Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Av. Gastão Vidigal, 25<br>Jardim Aeroporto - CEP 87050-440</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Contato:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Consulte via Secretaria de Educação<br>(44) 3221-2591</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="consultarEscola('Campos Salles')">
+                                    <i class="fas fa-info-circle"></i>
+                                    Consultar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Av. Gastão Vidigal, 25, Jardim Aeroporto, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Ayrton Playsant -->
+                        <div class="education-card" data-bairro="zona 07">
+                            <div class="education-header">
+                                <div class="education-icon school">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>Escola Municipal Ayrton Playsant</h3>
+                                    <span class="education-type">Escola Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Francisco Glicério, 410<br>Zona 07 - CEP 87030-050</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Contato:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Consulte via Secretaria de Educação<br>(44) 3221-2591</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="consultarEscola('Ayrton Playsant')">
+                                    <i class="fas fa-info-circle"></i>
+                                    Consultar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Francisco Glicério, 410, Zona 07, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Ariovaldo Moreno -->
+                        <div class="education-card" data-bairro="jardim alvorada">
+                            <div class="education-header">
+                                <div class="education-icon school">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h3>Escola Municipal Ariovaldo Moreno</h3>
+                                    <span class="education-type">Escola Municipal</span>
+                                </div>
+                            </div>
+                            <div class="education-details">
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
+                                    <i class="fas fa-map-marker-alt" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Endereço:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Rua Ivan Pavilov, s/n<br>Jardim Alvorada - CEP 87035-010</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0;">
+                                    <i class="fas fa-phone" style="color: #16a34a; font-size: 1.1rem; margin-top: 2px; min-width: 16px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: #111827; display: block; margin-bottom: 0.25rem;">Contato:</strong>
+                                        <p style="color: #6b7280; margin: 0; line-height: 1.4;">Consulte via Secretaria de Educação<br>(44) 3221-2591</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-actions">
+                                <button class="btn btn-primary" onclick="consultarEscola('Ariovaldo Moreno')">
+                                    <i class="fas fa-info-circle"></i>
+                                    Consultar
+                                </button>
+                                <button class="btn btn-outline" onclick="verNoMapa('Rua Ivan Pavilov, Jardim Alvorada, Maringá')">
+                                    <i class="fas fa-map"></i>
+                                    Ver no Mapa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações Importantes -->
+            <div class="card info-card">
+                <div class="card-header">
+                    <h2>
+                        <i class="fas fa-info-circle"></i>
+                        Informações Importantes
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="info-grid">
+                        <div class="info-item-large">
+                            <div class="info-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Matrículas</h3>
+                                <p>As matrículas para creches e escolas municipais são realizadas através da Secretaria Municipal de Educação. Entre em contato para informações sobre períodos e documentação necessária.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item-large">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3>Secretaria de Educação</h3>
+                                <p><strong>Telefones:</strong> (44) 3221-2591 / 3221-2593 / 3221-2588<br>
+                                <strong>Endereço:</strong> Av. Itororó, 583, Zona 02</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item-large">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Horário de Atendimento</h3>
+                                <p>Segunda a Sexta: 8h às 17h<br>
+                                Para emergências educacionais, ligue 156</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo e Descrição -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Portal Maringá</h3>
+                            <p>Cidade Conectada</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Um portal digital comunitário desenvolvido para democratizar o acesso a informações urbanas 
+                        essenciais e promover a inclusão digital em Maringá.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="transporte.html">Transporte</a></li>
+                        <li><a href="saude.html">Saúde</a></li>
+                        <li><a href="educacao.html">Educação</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>156 - Central de Atendimento</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>www.maringa.pr.gov.br</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>
+                                Prefeitura Municipal de Maringá<br>
+                                Av. XV de Novembro, 701<br>
+                                Centro - Maringá/PR
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Portal Maringá. Desenvolvido com foco na inclusão digital e sustentabilidade urbana.</p>
+                <p class="footer-note">Projeto alinhado aos Objetivos de Desenvolvimento Sustentável da Agenda 2030</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

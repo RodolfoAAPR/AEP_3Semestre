@@ -620,3 +620,124 @@ function validateField(field) {
 
   return isValid
 }
+
+// ===== FUNÇÕES DE EDUCAÇÃO =====
+
+function buscarEducacao() {
+  const searchInput = document.getElementById("searchEducation")
+  if (searchInput) {
+    const searchTerm = searchInput.value.trim().toLowerCase()
+    const educationCards = document.querySelectorAll(".education-card")
+    let foundResults = false
+
+    const existingNoResults = document.querySelector(".no-results")
+    if (existingNoResults) {
+      existingNoResults.remove()
+    }
+
+    educationCards.forEach((card) => {
+      const bairroData = card.getAttribute("data-bairro").toLowerCase()
+      const educationTitle = card.querySelector("h3").textContent.toLowerCase()
+      const educationAddress = card.querySelector(".info-item p").textContent.toLowerCase()
+
+      if (
+        searchTerm === "" ||
+        bairroData.includes(searchTerm) ||
+        educationTitle.includes(searchTerm) ||
+        educationAddress.includes(searchTerm)
+      ) {
+        card.classList.remove("hidden")
+        foundResults = true
+      } else {
+        card.classList.add("hidden")
+      }
+    })
+
+    if (!foundResults && searchTerm !== "") {
+      const educationGrid = document.querySelector(".education-grid")
+      const noResults = document.createElement("div")
+      noResults.className = "no-results"
+      noResults.innerHTML = `
+        <i class="fas fa-search"></i>
+        <p>Nenhuma escola ou creche encontrada para "${searchTerm}"</p>
+        <p>Tente buscar por outro bairro ou nome.</p>
+      `
+      educationGrid.appendChild(noResults)
+    }
+
+    const searchBtn = document.querySelector(".search-education .btn-primary")
+    if (searchBtn && searchTerm) {
+      addLoadingState(searchBtn, "Buscando...")
+    }
+  }
+}
+
+function usarLocalizacaoEducacao() {
+  if (navigator.geolocation) {
+    const locationBtn = document.querySelector(".location-btn")
+    addLoadingState(locationBtn, "Obtendo localização...")
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude
+        const lng = position.coords.longitude
+
+        setTimeout(() => {
+          alert(`Localização obtida!\nBuscando escolas e creches próximas a sua localização...`)
+          const educationCards = document.querySelectorAll(".education-card")
+          educationCards.forEach((card) => card.classList.remove("hidden"))
+        }, 1500)
+      },
+      (error) => {
+        setTimeout(() => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              alert("Permissão de localização negada pelo usuário.")
+              break
+            case error.POSITION_UNAVAILABLE:
+              alert("Informação de localização não disponível.")
+              break
+            case error.TIMEOUT:
+              alert("Tempo limite para obter localização excedido.")
+              break
+            default:
+              alert("Erro desconhecido ao obter localização.")
+              break
+          }
+        }, 1500)
+      },
+    )
+  } else {
+    alert("Geolocalização não é suportada por este navegador.")
+  }
+}
+
+function ligarEducacao(numero) {
+  if (confirm(`Deseja ligar para a instituição?\nNúmero: ${formatPhoneNumber(numero)}`)) {
+    window.location.href = `tel:${numero}`
+  }
+}
+
+function consultarEscola(escolaNome) {
+  alert(
+    `Para obter informações sobre a ${escolaNome}, consulte:\n\n• Secretaria Municipal de Educação\n• Telefones: (44) 3221-2591 / 3221-2593 / 3221-2588\n• Endereço: Av. Itororó, 583, Zona 02\n• Ligue para 156 (Atendimento da Prefeitura)`,
+  )
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchEducationInput = document.getElementById("searchEducation")
+  if (searchEducationInput) {
+    searchEducationInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        buscarEducacao()
+      }
+    })
+
+    searchEducationInput.addEventListener("input", () => {
+      clearTimeout(searchEducationInput.searchTimeout)
+      searchEducationInput.searchTimeout = setTimeout(() => {
+        buscarEducacao()
+      }, 300)
+    })
+  }
+})
