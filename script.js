@@ -372,7 +372,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300)
     })
   }
-<<<<<<< HEAD
 })
 
 // AQUI VAI O JS DO CONTATO
@@ -636,6 +635,3 @@ function verNoMapa(endereco) {
   const encodedAddress = encodeURIComponent(endereco)
   window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, "_blank")
 }
-=======
-})
->>>>>>> e79462798beb1809df8ac704333a2707ae8db498
