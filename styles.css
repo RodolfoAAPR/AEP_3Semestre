@@ -1,4 +1,3 @@
-/* Reset e Base */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
 .header {
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -119,7 +117,6 @@ body {
   display: flex;
 }
 
-/* Hero Section */
 .hero {
   padding: 4rem 0;
   text-align: center;
@@ -230,7 +227,6 @@ body {
   color: #6b7280;
 }
 
-/* Services Section */
 .services {
   padding: 4rem 0;
   background: white;
@@ -350,7 +346,6 @@ body {
   background: #15803d;
 }
 
-/* Quick Access Section */
 .quick-access {
   padding: 4rem 0;
   background: #f9fafb;
@@ -481,7 +476,6 @@ body {
   color: white;
 }
 
-/* Footer */
 .footer {
   background: #111827;
   color: white;
@@ -582,7 +576,6 @@ body {
   color: #6b7280;
 }
 
-/* Transport Page */
 .transport-page {
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   min-height: calc(100vh - 200px);
@@ -779,7 +772,6 @@ body {
   line-height: 1.5;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
@@ -868,7 +860,6 @@ body {
   }
 }
 
-/* Health Page Styles */
 .health-page {
   background: linear-gradient(135deg, #fef2f2 0%, #fef7f7 100%);
   min-height: calc(100vh - 200px);
@@ -1044,7 +1035,6 @@ body {
   color: #6b7280;
 }
 
-
 .ubs-card.hidden {
   display: none;
 }
@@ -1061,7 +1051,6 @@ body {
   color: #d1d5db;
   margin-bottom: 1rem;
 }
-
 
 @media (max-width: 768px) {
   .search-grid {
@@ -1101,8 +1090,6 @@ body {
   }
 }
 
-
-/* Contact Page Styles - VERSÃO CORRIGIDA */
 .contact-page {
   background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
   min-height: calc(100vh - 200px);
@@ -1145,7 +1132,6 @@ body {
   line-height: 1.4;
 }
 
-/* OVERRIDE ESPECÍFICO PARA CONTATO */
 .card .contact-details .contact-item {
   gap: 0.25rem !important;
 }
@@ -1404,7 +1390,6 @@ body {
   margin: 0;
 }
 
-/* Form validation styles */
 .form-group input.error,
 .form-group select.error,
 .form-group textarea.error {
@@ -1435,7 +1420,6 @@ body {
   gap: 0.5rem;
 }
 
-/* Estilos para departamentos detalhados */
 .department-item-detailed {
   display: flex;
   align-items: flex-start;
@@ -1497,7 +1481,6 @@ body {
   line-height: 1.4;
 }
 
-/* Responsive adjustments for contact page */
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -1540,8 +1523,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  /* ... estilos existentes ... */
-
   .department-item-detailed {
     padding: 0.75rem;
   }
@@ -1552,5 +1533,208 @@ body {
 
   .contact-detail {
     font-size: 0.85rem;
+  }
+}
+
+.help-page {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+.help-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.help-section {
+  margin-bottom: 3rem;
+}
+
+.help-section h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #16a34a;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 2px solid #16a34a;
+  padding-bottom: 0.5rem;
+}
+
+.help-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.help-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.help-card ul,
+.help-card ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.help-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.help-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.emergency-help {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.emergency-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.emergency-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  min-width: 60px;
+  text-align: center;
+}
+
+.emergency-number.red {
+  background: #dc2626;
+}
+
+.emergency-number.blue {
+  background: #2563eb;
+}
+
+.emergency-number.green {
+  background: #16a34a;
+}
+
+.emergency-item strong {
+  color: #111827;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.emergency-item p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item strong {
+  color: #16a34a;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #374151;
+}
+
+.help-cta {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.help-cta h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.help-cta p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.help-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.help-buttons .btn {
+  padding: 0.75rem 1.5rem;
+}
+
+.help-buttons .btn-outline {
+  border-color: white;
+  color: white;
+}
+
+.help-buttons .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .help-content {
+    padding: 0 1rem;
+  }
+
+  .help-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .help-card {
+    padding: 1rem;
+  }
+
+  .emergency-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .help-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-buttons .btn {
+    width: 100%;
+    max-width: 250px;
   }
 }
