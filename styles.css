@@ -1542,6 +1542,29 @@ body {
   padding: 2rem 0;
 }
 
+.help-page .page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.help-page .page-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #16a34a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.help-page .page-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .help-content {
   max-width: 800px;
   margin: 0 auto;
@@ -1559,8 +1582,17 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  border-bottom: 2px solid #16a34a;
   padding-bottom: 0.5rem;
+}
+
+.help-section h2 i {
+  font-size: 1.5rem;
+  color: #16a34a;
+}
+
+.help-page .page-header h1 i {
+  font-size: 2rem;
+  color: #16a34a;
 }
 
 .help-card {
@@ -1603,13 +1635,18 @@ body {
   gap: 1.5rem;
 }
 
-.emergency-item {
+.emergency-help .emergency-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
   background: #f9fafb;
   border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.emergency-help .emergency-item div {
+  flex: 1;
 }
 
 .emergency-number {
@@ -1715,6 +1752,19 @@ body {
     padding: 0 1rem;
   }
 
+  .help-page .page-header h1 {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .help-section h2 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
   .help-section h2 {
     font-size: 1.5rem;
   }
@@ -1733,6 +1783,13 @@ body {
     align-items: center;
   }
 
+  .help-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
   .help-buttons .btn {
     width: 100%;
     max-width: 250px;
