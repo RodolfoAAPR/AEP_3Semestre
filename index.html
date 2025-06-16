@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Maringá - Cidade Conectada</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Portal Maringá</h1>
+                        <p>Cidade Conectada</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#inicio">Início</a>
+                    <a href="transporte.html">Transporte</a>
+                    <a href="#saude">Saúde</a>
+                    <a href="#educacao">Educação</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="#inicio">Início</a>
+            <a href="transporte.html">Transporte</a>
+            <a href="#saude">Saúde</a>
+            <a href="#educacao">Educação</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        Conectando Maringá
+                        <span class="hero-subtitle">para Todos</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        Acesse informações essenciais sobre transporte público, unidades de saúde, escolas e muito mais. 
+                        Um portal pensado para toda a comunidade.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            Explorar Serviços
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-outline">Como Usar</button>
+                    </div>
+
+                    <div class="hero-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Inclusão Digital</h3>
+                            <p>Interface simples e acessível para todos os cidadãos</p>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3>Sustentabilidade</h3>
+                            <p>Incentivando o uso do transporte público</p>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <h3>Eficiência</h3>
+                            <p>Reduzindo tempo de planejamento de viagens</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Serviços Disponíveis</h2>
+                    <p>Acesse rapidamente as informações que você precisa sobre os serviços públicos de Maringá</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon blue">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <h3>Transporte Público</h3>
+                            <p>Horários, rotas e pontos de ônibus em tempo real</p>
+                        </div>
+                        <div class="service-content">
+                            <ul class="service-features">
+                                <li><span class="dot"></span>Horários atualizados</li>
+                                <li><span class="dot"></span>Mapa de rotas</li>
+                                <li><span class="dot"></span>Pontos próximos</li>
+                            </ul>
+                            <a href="transporte.html" class="btn btn-service">Acessar</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon red">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h3>Unidades de Saúde</h3>
+                            <p>Localização e informações dos postos de saúde</p>
+                        </div>
+                        <div class="service-content">
+                            <ul class="service-features">
+                                <li><span class="dot"></span>Endereços completos</li>
+                                <li><span class="dot"></span>Horários de funcionamento</li>
+                                <li><span class="dot"></span>Especialidades</li>
+                            </ul>
+                            <button class="btn btn-service">Acessar</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon purple">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Escolas</h3>
+                            <p>Informações sobre escolas públicas da cidade</p>
+                        </div>
+                        <div class="service-content">
+                            <ul class="service-features">
+                                <li><span class="dot"></span>Localização</li>
+                                <li><span class="dot"></span>Contatos</li>
+                                <li><span class="dot"></span>Níveis de ensino</li>
+                            </ul>
+                            <button class="btn btn-service">Acessar</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon orange">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h3>Creches</h3>
+                            <p>Centros de educação infantil e creches públicas</p>
+                        </div>
+                        <div class="service-content">
+                            <ul class="service-features">
+                                <li><span class="dot"></span>Vagas disponíveis</li>
+                                <li><span class="dot"></span>Inscrições</li>
+                                <li><span class="dot"></span>Documentação</li>
+                            </ul>
+                            <button class="btn btn-service">Acessar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <section class="quick-access">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Acesso Rápido</h2>
+                    <p>Encontre rapidamente o que você precisa</p>
+                </div>
+
+                <div class="quick-access-grid">
+                    <!-- Busca Rápida -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-search"></i>
+                                Busca Rápida
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="search-form">
+                                <input type="text" placeholder="Digite o nome da rua ou bairro..." class="search-input">
+                                <button class="btn btn-primary search-btn">
+                                    <i class="fas fa-search"></i>
+                                    Buscar Serviços Próximos
+                                </button>
+                            </div>
+
+                            <div class="quick-buttons">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Usar Localização
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-clock"></i>
+                                    Horários
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contatos Emergenciais -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-phone"></i>
+                                Contatos Importantes
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="emergency-contacts">
+                                <div class="contact-item red">
+                                    <div class="contact-info">
+                                        <p class="contact-name">SAMU</p>
+                                        <p class="contact-desc">Emergência Médica</p>
+                                    </div>
+                                    <button class="btn btn-emergency red">192</button>
+                                </div>
+
+                                <div class="contact-item blue">
+                                    <div class="contact-info">
+                                        <p class="contact-name">Bombeiros</p>
+                                        <p class="contact-desc">Emergência Geral</p>
+                                    </div>
+                                    <button class="btn btn-emergency blue">193</button>
+                                </div>
+
+                                <div class="contact-item green">
+                                    <div class="contact-info">
+                                        <p class="contact-name">Prefeitura</p>
+                                        <p class="contact-desc">Atendimento Geral</p>
+                                    </div>
+                                    <button class="btn btn-emergency green">156</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo e Descrição -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Portal Maringá</h3>
+                            <p>Cidade Conectada</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Um portal digital comunitário desenvolvido para democratizar o acesso a informações urbanas 
+                        essenciais e promover a inclusão digital em Maringá.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/search/top?q=prefeitura%20de%20maring%C3%A1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/prefeiturademaringa/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/prefdemaringa"><i class="fab fa-x"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="transporte.html">Transporte</a></li>
+                        <li><a href="#saude">Saúde</a></li>
+                        <li><a href="#educacao">Educação</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@portalmaringa.gov.br</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(44) 3901-1156</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>
+                                Prefeitura Municipal de Maringá<br>
+                                Av. XV de Novembro, 200<br>
+                                Centro - Maringá/PR
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Portal Maringá. Desenvolvido com foco na inclusão digital e sustentabilidade urbana.</p>
+                <p class="footer-note">Projeto alinhado aos Objetivos de Desenvolvimento Sustentável da Agenda 2030</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
