@@ -620,3 +620,24 @@ function validateField(field) {
 
   return isValid
 }
+<<<<<<< HEAD
+=======
+
+// Função para adicionar estado de loading ao botão
+function addLoadingState(button, text) {
+  button.disabled = true
+  button.textContent = text
+}
+
+// Função para validar email
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email)
+}
+
+// Função para abrir localização no mapa
+function verNoMapa(endereco) {
+  const encodedAddress = encodeURIComponent(endereco)
+  window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, "_blank")
+}
+>>>>>>> f4367605d615f771cebcca179f991e99ec45c738
