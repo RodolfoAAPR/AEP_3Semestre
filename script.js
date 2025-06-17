@@ -132,21 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-document.addEventListener("DOMContentLoaded", () => {
-  const serviceButtons = document.querySelectorAll(".btn-service")
-  serviceButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const serviceCard = this.closest(".service-card")
-      const serviceName = serviceCard.querySelector("h3").textContent
-
-      if (serviceName.includes("Transporte")) {
-        window.location.href = "transporte.html"
-      } else {
-        alert(`Acessando ${serviceName}...\nEsta funcionalidade será implementada em breve.`)
-      }
-    })
-  })
-})
+// REMOVIDO: O código que interceptava os botões de serviço
+// Agora todos os serviços usam links diretos <a href="...">
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputs = document.querySelectorAll('input[type="text"]')
