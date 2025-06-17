@@ -669,6 +669,27 @@ body {
   border: 1px solid #e5e7eb;
 }
 
+.bus-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.schedule-item i {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  min-width: 12px;
+}
+
 .bus-info {
   display: flex;
   align-items: center;
@@ -1962,5 +1983,15 @@ body {
   .help-buttons .btn {
     width: 100%;
     max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bus-schedule {
+    margin-top: 0.75rem;
+  }
+
+  .schedule-item {
+    font-size: 0.8rem;
   }
 }
